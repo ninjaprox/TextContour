@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */; };
+		1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEE8221E45C160008B4CE5 /* ViewController.swift */; };
+		1FDEE8261E45C160008B4CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8241E45C160008B4CE5 /* Main.storyboard */; };
+		1FDEE8281E45C160008B4CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8271E45C160008B4CE5 /* Assets.xcassets */; };
+		1FDEE82B1E45C160008B4CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */; };
+		BB848B1D38F5ED7BA4240D1A /* Pods_TextContour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1FDEE81D1E45C160008B4CE5 /* TextContour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextContour.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1FDEE8221E45C160008B4CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1FDEE8251E45C160008B4CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1FDEE8271E45C160008B4CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FDEE82A1E45C160008B4CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1FDEE82C1E45C160008B4CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.release.xcconfig"; sourceTree = "<group>"; };
+		DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.debug.xcconfig"; sourceTree = "<group>"; };
+		DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextContour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FDEE81A1E45C15F008B4CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB848B1D38F5ED7BA4240D1A /* Pods_TextContour.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FDEE8141E45C15F008B4CE5 = {
+			isa = PBXGroup;
+			children = (
+				1FDEE81F1E45C160008B4CE5 /* TextContour */,
+				1FDEE81E1E45C160008B4CE5 /* Products */,
+				89C1C7A2F5EF5782B308F426 /* Pods */,
+				E8DB03B6EC5BF2ACD9104389 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1FDEE81E1E45C160008B4CE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FDEE81D1E45C160008B4CE5 /* TextContour.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FDEE81F1E45C160008B4CE5 /* TextContour */ = {
+			isa = PBXGroup;
+			children = (
+				1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */,
+				1FDEE8221E45C160008B4CE5 /* ViewController.swift */,
+				1FDEE8241E45C160008B4CE5 /* Main.storyboard */,
+				1FDEE8271E45C160008B4CE5 /* Assets.xcassets */,
+				1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */,
+				1FDEE82C1E45C160008B4CE5 /* Info.plist */,
+			);
+			path = TextContour;
+			sourceTree = "<group>";
+		};
+		89C1C7A2F5EF5782B308F426 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */,
+				A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8DB03B6EC5BF2ACD9104389 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FDEE81C1E45C15F008B4CE5 /* TextContour */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDEE82F1E45C160008B4CE5 /* Build configuration list for PBXNativeTarget "TextContour" */;
+			buildPhases = (
+				46D852AE196A2055DE5D7541 /* [CP] Check Pods Manifest.lock */,
+				1FDEE8191E45C15F008B4CE5 /* Sources */,
+				1FDEE81A1E45C15F008B4CE5 /* Frameworks */,
+				1FDEE81B1E45C15F008B4CE5 /* Resources */,
+				E861B50A919370F2DCC9E643 /* [CP] Embed Pods Frameworks */,
+				1A00905BBE5C29DE7CD48FFB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextContour;
+			productName = TextContour;
+			productReference = 1FDEE81D1E45C160008B4CE5 /* TextContour.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FDEE8151E45C15F008B4CE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Vinh Nguyen";
+				TargetAttributes = {
+					1FDEE81C1E45C15F008B4CE5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1FDEE8181E45C15F008B4CE5 /* Build configuration list for PBXProject "TextContour" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FDEE8141E45C15F008B4CE5;
+			productRefGroup = 1FDEE81E1E45C160008B4CE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FDEE81C1E45C15F008B4CE5 /* TextContour */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FDEE81B1E45C15F008B4CE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDEE82B1E45C160008B4CE5 /* LaunchScreen.storyboard in Resources */,
+				1FDEE8281E45C160008B4CE5 /* Assets.xcassets in Resources */,
+				1FDEE8261E45C160008B4CE5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A00905BBE5C29DE7CD48FFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextContour/Pods-TextContour-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46D852AE196A2055DE5D7541 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E861B50A919370F2DCC9E643 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextContour/Pods-TextContour-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FDEE8191E45C15F008B4CE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */,
+				1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1FDEE8241E45C160008B4CE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDEE8251E45C160008B4CE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDEE82A1E45C160008B4CE5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FDEE82D1E45C160008B4CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1FDEE82E1E45C160008B4CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1FDEE8301E45C160008B4CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TextContour/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContour;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1FDEE8311E45C160008B4CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TextContour/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContour;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FDEE8181E45C15F008B4CE5 /* Build configuration list for PBXProject "TextContour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDEE82D1E45C160008B4CE5 /* Debug */,
+				1FDEE82E1E45C160008B4CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDEE82F1E45C160008B4CE5 /* Build configuration list for PBXNativeTarget "TextContour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDEE8301E45C160008B4CE5 /* Debug */,
+				1FDEE8311E45C160008B4CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FDEE8151E45C15F008B4CE5 /* Project object */;
+}
