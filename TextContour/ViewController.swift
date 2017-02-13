@@ -11,7 +11,9 @@ import GPUImage
 
 class ViewController: UIViewController {
     let size = CGSize(width: 800, height: 200)
-    let fontSize: CGFloat = 50
+    let position = CGPoint(x: 0, y: 10)
+    let fontSize: CGFloat = 40
+    var containerView: UIView!
     var textView: UITextView!
     var imageView1: UIImageView!
     var contourView1: UIView!
@@ -21,7 +23,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textView = UITextView(frame: CGRect(x: 0, y: 20, width: size.width, height: size.height))
+        containerView = UIView(frame: CGRect(x: 0, y: 20, width: size.width, height: size.height))
+        textView = UITextView(frame: CGRect(x: position.x, y: position.y, width: size.width - position.x, height: size.height - position.y))
         imageView1 = UIImageView(frame: CGRect(x: 0, y: 250,
                                                width: size.width, height: size.height))
         imageView2 = UIImageView(frame: CGRect(x: 0, y: 500,
@@ -29,10 +32,11 @@ class ViewController: UIViewController {
 
         configuration()
 
-//                let range: Range<Int> = 45 ..< 46
+//        let range: Range<Int> = 21 ..< 22
+//        let displayed = true
+
         let range: Range<Int>? = nil
         let displayed = false
-//                let displayed = true
 
         loadFonts(displayed: displayed, range: range)
         loadImages(displayed: displayed, range: range)
@@ -41,9 +45,14 @@ class ViewController: UIViewController {
     // MARK: - Configuration
 
     func configuration() {
+        containerView.backgroundColor = .white
+
+        textView.backgroundColor = .white
         textView.textContainerInset = .zero;
         textView.textContainer.lineFragmentPadding = 0;
-        view.addSubview(textView)
+        textView.layoutManager.delegate = self
+        containerView.addSubview(textView)
+        view.addSubview(containerView)
 
         imageView1.layer.borderColor = UIColor.red.cgColor
         imageView1.layer.borderWidth = 1
@@ -80,8 +89,9 @@ class ViewController: UIViewController {
                 continue
             }
 
+            let content = "Grumpy wizards make toxic brew for the evil Queen and Jack. AV. \(name)"
             let style = NSMutableParagraphStyle()
-            let string = NSMutableAttributedString(string: "Grumpy wizards make toxic brew for the evil Queen and Jack.")
+            let string = NSMutableAttributedString(string: content)
 
             style.maximumLineHeight = fontSize
             style.minimumLineHeight = fontSize
@@ -92,7 +102,7 @@ class ViewController: UIViewController {
             textView.font = font
             textView.textColor = .black
 
-            let image = imageSync(of: textView)
+            let image = imageSync(of: containerView)
             let contour = textContourSync(of: image)
 
             contours[name] = ["x": contour.origin.x,
@@ -267,7 +277,6 @@ class ViewController: UIViewController {
                         min.y = CGFloat(y)
                     }
                 }
-                
             }
         }
         
@@ -283,5 +292,25 @@ extension UIImage {
         filter.threshold = 0.5;
         
         return filter.image(byFilteringImage: self)
+    }
+}
+
+extension ViewController: NSLayoutManagerDelegate {
+
+    func layoutManager(_ layoutManager: NSLayoutManager, shouldGenerateGlyphs glyphs: UnsafePointer<CGGlyph>, properties props: UnsafePointer<NSGlyphProperty>, characterIndexes charIndexes: UnsafePointer<Int>, font aFont: UIFont, forGlyphRange glyphRange: NSRange) -> Int {
+        print("glyphs", glyphs)
+        print("props", props)
+        print("charIndexes", charIndexes)
+
+        return 0
+    }
+
+    func layoutManager(_ layoutManager: NSLayoutManager, boundingBoxForControlGlyphAt glyphIndex: Int, for textContainer: NSTextContainer, proposedLineFragment proposedRect: CGRect, glyphPosition: CGPoint, characterIndex charIndex: Int) -> CGRect {
+        print("glyphIndex", glyphIndex)
+        print("proposedRect", proposedRect)
+        print("glyphPosition", glyphPosition)
+        print("charIndex", charIndex)
+
+        return proposedRect
     }
 }
