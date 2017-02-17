@@ -38,8 +38,8 @@ class ViewController: UIViewController {
         //        let range: Range<Int>? = nil
         //        let displayed = false
 
-        loadFonts(displayed: displayed, range: range)
-        loadImages(displayed: displayed, range: range)
+        //        loadFonts(displayed: displayed, range: range)
+        //        loadImages(displayed: displayed, range: range)
     }
 
     // MARK: - Configuration
@@ -72,78 +72,34 @@ class ViewController: UIViewController {
     // MARK: -
 
     func loadFonts(displayed: Bool, range: Range<Int>? = nil) {
-        var fonts = FontLoader().list()
-        var contours: Dictionary<String, Dictionary<String, CGFloat>> = [:]
+        var fontNames = FontLoader().list()
 
         if let range = range {
-            fonts = Array(fonts[range])
+            fontNames = Array(fontNames[range])
         }
 
-        for name in fonts {
-            let content = "Grumpy wizards make toxic brew for the evil Queen and Jack. AV. \(name)"
-
-            guard let driver = TextViewDriver(fontName: name, fontSize: fontSize, content: content) else {
-                contours[name] = ["x": 0,
-                                  "y": 0,
-                                  "width": 0,
-                                  "height": 0]
-
-                continue
-            }
-
-            let image = driver.image()
-            let contour = image.textContourSync()
-
-            contours[name] = ["x": contour.origin.x,
-                              "y": contour.origin.y,
-                              "width": contour.size.width,
-                              "height": contour.size.height]
-
+        let _ = IOSDriver(fontNames: fontNames, fontSize: fontSize).contours { (image, contour) in
             if displayed {
-                display(image, in: imageView2)
-                displayTextContour(contourView2, at: contour, in: imageView2)
+                self.display(image, in: self.imageView2)
+                self.displayTextContour(self.contourView2, at: contour, in: self.imageView2)
                 debugPrint(contour)
             }
-        }
-
-        if let data = try? JSONSerialization.data(withJSONObject: contours, options: .prettyPrinted) {
-            write(data, to: "contours-ios.json")
         }
     }
 
     func loadImages(displayed: Bool, range: Range<Int>? = nil) {
-        var fonts = FontLoader().list()
-        var contours: Dictionary<String, Dictionary<String, CGFloat>> = [:]
+        var fontNames = FontLoader().list()
 
         if let range = range {
-            fonts = Array(fonts[range])
+            fontNames = Array(fontNames[range])
         }
 
-        for name in fonts {
-            guard let url = Bundle.main.url(forResource: name, withExtension: "png"),
-                let data = try? Data(contentsOf: url),
-                let image = UIImage(data: data)?.blackAndWhite() else {
-                    debugPrint("Failed to load", name)
-
-                    continue
-            }
-
-            let contour = image.textContourSync()
-
-            contours[name] = ["x": contour.origin.x,
-                              "y": contour.origin.y,
-                              "width": contour.size.width,
-                              "height": contour.size.height]
-
+        let _ = WebDriver(fontNames: fontNames, fontSize: fontSize).contours { (image, contour) in
             if displayed {
-                display(image, in: imageView1)
-                displayTextContour(contourView1, at: contour, in: imageView1)
+                self.display(image, in: self.imageView1)
+                self.displayTextContour(self.contourView1, at: contour, in: self.imageView1)
                 debugPrint(contour)
             }
-        }
-
-        if let data = try? JSONSerialization.data(withJSONObject: contours, options: .prettyPrinted) {
-            write(data, to: "contours-web.json")
         }
     }
 

@@ -316,6 +316,9 @@
 		F9BDF38A1E570432007ACF8E /* TextViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3891E570432007ACF8E /* TextViewDriver.swift */; };
 		F9BDF3921E571381007ACF8E /* TextContourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3911E571381007ACF8E /* TextContourTests.swift */; };
 		F9BDF39A1E5715CC007ACF8E /* Writter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3991E5715CC007ACF8E /* Writter.swift */; };
+		F9BDF39C1E571A69007ACF8E /* IOSDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF39B1E571A69007ACF8E /* IOSDriver.swift */; };
+		F9BDF39E1E571A7F007ACF8E /* Contours.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF39D1E571A7F007ACF8E /* Contours.swift */; };
+		F9BDF3A01E571D3A007ACF8E /* WebDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF39F1E571D3A007ACF8E /* WebDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -644,6 +647,9 @@
 		F9BDF3911E571381007ACF8E /* TextContourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContourTests.swift; sourceTree = "<group>"; };
 		F9BDF3931E571381007ACF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9BDF3991E5715CC007ACF8E /* Writter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writter.swift; sourceTree = "<group>"; };
+		F9BDF39B1E571A69007ACF8E /* IOSDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSDriver.swift; sourceTree = "<group>"; };
+		F9BDF39D1E571A7F007ACF8E /* Contours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contours.swift; sourceTree = "<group>"; };
+		F9BDF39F1E571D3A007ACF8E /* WebDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -702,6 +708,9 @@
 				F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */,
 				F9BDF3891E570432007ACF8E /* TextViewDriver.swift */,
 				F9BDF3991E5715CC007ACF8E /* Writter.swift */,
+				F9BDF39B1E571A69007ACF8E /* IOSDriver.swift */,
+				F9BDF39D1E571A7F007ACF8E /* Contours.swift */,
+				F9BDF39F1E571D3A007ACF8E /* WebDriver.swift */,
 			);
 			path = TextContour;
 			sourceTree = "<group>";
@@ -1524,10 +1533,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BDF39E1E571A7F007ACF8E /* Contours.swift in Sources */,
+				F9BDF3A01E571D3A007ACF8E /* WebDriver.swift in Sources */,
 				F9BDF3841E570254007ACF8E /* UIImage+GPUImage.swift in Sources */,
 				F9BDF39A1E5715CC007ACF8E /* Writter.swift in Sources */,
 				F9BDF3881E570334007ACF8E /* UIImage+TextContour.swift in Sources */,
 				1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */,
+				F9BDF39C1E571A69007ACF8E /* IOSDriver.swift in Sources */,
 				F9694C891E4D707800546E2A /* FontLoader.swift in Sources */,
 				F9BDF38A1E570432007ACF8E /* TextViewDriver.swift in Sources */,
 				1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */,
