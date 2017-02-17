@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GPUImage
 
 class ViewController: UIViewController {
     let size = CGSize(width: 800, height: 200)
@@ -32,11 +31,12 @@ class ViewController: UIViewController {
 
         configuration()
 
-//        let range: Range<Int> = 21 ..< 22
-//        let displayed = true
+        let index = 20
+        let range: Range<Int> = index ..< (index + 1)
+        let displayed = true
 
-        let range: Range<Int>? = nil
-        let displayed = false
+        //        let range: Range<Int>? = nil
+        //        let displayed = false
 
         loadFonts(displayed: displayed, range: range)
         loadImages(displayed: displayed, range: range)
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         textView.backgroundColor = .white
         textView.textContainerInset = .zero;
         textView.textContainer.lineFragmentPadding = 0;
-        textView.layoutManager.delegate = self
+        //        textView.layoutManager.delegate = self
         containerView.addSubview(textView)
         view.addSubview(containerView)
 
@@ -80,7 +80,9 @@ class ViewController: UIViewController {
         }
 
         for name in fonts {
-            guard let font = UIFont(name: name, size: fontSize) else {
+            let content = "Grumpy wizards make toxic brew for the evil Queen and Jack. AV. \(name)"
+
+            guard let driver = TextViewDriver(fontName: name, fontSize: fontSize, content: content) else {
                 contours[name] = ["x": 0,
                                   "y": 0,
                                   "width": 0,
@@ -89,21 +91,8 @@ class ViewController: UIViewController {
                 continue
             }
 
-            let content = "Grumpy wizards make toxic brew for the evil Queen and Jack. AV. \(name)"
-            let style = NSMutableParagraphStyle()
-            let string = NSMutableAttributedString(string: content)
-
-            style.maximumLineHeight = fontSize
-            style.minimumLineHeight = fontSize
-            string.addAttribute(NSParagraphStyleAttributeName, value:style,
-                                range:NSMakeRange(0, string.length))
-
-            textView.attributedText = string
-            textView.font = font
-            textView.textColor = .black
-
-            let image = imageSync(of: containerView)
-            let contour = textContourSync(of: image)
+            let image = driver.image()
+            let contour = image.textContourSync()
 
             contours[name] = ["x": contour.origin.x,
                               "y": contour.origin.y,
@@ -113,6 +102,7 @@ class ViewController: UIViewController {
             if displayed {
                 display(image, in: imageView2)
                 displayTextContour(contourView2, at: contour, in: imageView2)
+                debugPrint(contour)
             }
         }
 
@@ -138,7 +128,7 @@ class ViewController: UIViewController {
                     continue
             }
 
-            let contour = textContourSync(of: image)
+            let contour = image.textContourSync()
 
             contours[name] = ["x": contour.origin.x,
                               "y": contour.origin.y,
@@ -148,6 +138,7 @@ class ViewController: UIViewController {
             if displayed {
                 display(image, in: imageView1)
                 displayTextContour(contourView1, at: contour, in: imageView1)
+                debugPrint(contour)
             }
         }
 
@@ -184,115 +175,6 @@ class ViewController: UIViewController {
         view.frame = rect
         imageView.addSubview(view)
     }
-
-    // MARK: -
-
-    func image(of view: UIView, completion: @escaping (UIImage) -> Void) {
-        DispatchQueue.global(qos: .utility).sync {
-            UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1)
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-            let image = UIGraphicsGetImageFromCurrentImageContext()!.blackAndWhite()
-            UIGraphicsEndImageContext()
-            DispatchQueue.main.async {
-                completion(image)
-            }
-        }
-    }
-
-    func imageSync(of view: UIView) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 1)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()!.blackAndWhite()
-        UIGraphicsEndImageContext()
-
-        return image
-    }
-
-    func textContour(of image: UIImage, completion: @escaping (CGRect) -> Void) {
-        DispatchQueue.global(qos: .utility).async {
-            let pixelData = image.cgImage!.dataProvider!.data
-            let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
-            let width = image.size.width
-            let height = image.size.height
-            var min = CGPoint(x: width, y: height)
-            var max = CGPoint.zero
-
-
-            for y in 0 ..< Int(height) {
-                for x in 0 ..< Int(width) {
-                    let pixelInfo: Int = ((Int(width) * y) + x) * 4
-                    let r = data[pixelInfo]
-                    let g = data[pixelInfo + 1]
-                    let b = data[pixelInfo + 2]
-
-                    if r == 0 && g == 0 && b == 0 {
-                        if CGFloat(x) > max.x {
-                            max.x = CGFloat(x)
-                        }
-                        if CGFloat(y) > max.y {
-                            max.y = CGFloat(y)
-                        }
-                        if CGFloat(x) < min.x {
-                            min.x = CGFloat(x)
-                        }
-                        if CGFloat(y) < min.y {
-                            min.y = CGFloat(y)
-                        }
-                    }
-
-                }
-            }
-            DispatchQueue.main.async {
-                completion(CGRect(x: min.x, y: min.y, width: max.x - min.x + 1, height: max.y - min.y + 1))
-            }
-        }
-    }
-
-    func textContourSync(of image: UIImage) -> CGRect {
-        let pixelData = image.cgImage!.dataProvider!.data
-        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
-        let width = image.size.width
-        let height = image.size.height
-        var min = CGPoint(x: width, y: height)
-        var max = CGPoint.zero
-
-        for y in 0 ..< Int(height) {
-            for x in 0 ..< Int(width) {
-                let pixelInfo: Int = ((Int(width) * y) + x) * 4
-                let r = data[pixelInfo]
-                let g = data[pixelInfo + 1]
-                let b = data[pixelInfo + 2]
-
-                if r == 0 && g == 0 && b == 0 {
-                    if CGFloat(x) > max.x {
-                        max.x = CGFloat(x)
-                    }
-                    if CGFloat(y) > max.y {
-                        max.y = CGFloat(y)
-                    }
-                    if CGFloat(x) < min.x {
-                        min.x = CGFloat(x)
-                    }
-                    if CGFloat(y) < min.y {
-                        min.y = CGFloat(y)
-                    }
-                }
-            }
-        }
-        
-        return CGRect(x: min.x, y: min.y, width: max.x - min.x + 1, height: max.y - min.y + 1)
-    }
-}
-
-extension UIImage {
-    
-    func blackAndWhite() -> UIImage {
-        let filter = GPUImageLuminanceThresholdFilter()
-        
-        filter.threshold = 0.5;
-        
-        return filter.image(byFilteringImage: self)
-    }
 }
 
 extension ViewController: NSLayoutManagerDelegate {
@@ -310,7 +192,7 @@ extension ViewController: NSLayoutManagerDelegate {
         print("proposedRect", proposedRect)
         print("glyphPosition", glyphPosition)
         print("charIndex", charIndex)
-
+        
         return proposedRect
     }
 }

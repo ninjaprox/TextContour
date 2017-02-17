@@ -310,6 +310,10 @@
 		F9694DA21E4D87B200546E2A /* Verdana-Italic.png in Resources */ = {isa = PBXBuildFile; fileRef = F9694D161E4D87B200546E2A /* Verdana-Italic.png */; };
 		F9694DA31E4D87B200546E2A /* Verdana-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = F9694D171E4D87B200546E2A /* Verdana-Regular.png */; };
 		F9694DA41E4D87B200546E2A /* Viga-Regular.png in Resources */ = {isa = PBXBuildFile; fileRef = F9694D181E4D87B200546E2A /* Viga-Regular.png */; };
+		F9BDF3841E570254007ACF8E /* UIImage+GPUImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3831E570254007ACF8E /* UIImage+GPUImage.swift */; };
+		F9BDF3861E5702A8007ACF8E /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */; };
+		F9BDF3881E570334007ACF8E /* UIImage+TextContour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */; };
+		F9BDF38A1E570432007ACF8E /* TextViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3891E570432007ACF8E /* TextViewDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -620,6 +624,10 @@
 		F9694D161E4D87B200546E2A /* Verdana-Italic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Verdana-Italic.png"; sourceTree = "<group>"; };
 		F9694D171E4D87B200546E2A /* Verdana-Regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Verdana-Regular.png"; sourceTree = "<group>"; };
 		F9694D181E4D87B200546E2A /* Viga-Regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Viga-Regular.png"; sourceTree = "<group>"; };
+		F9BDF3831E570254007ACF8E /* UIImage+GPUImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+GPUImage.swift"; sourceTree = "<group>"; };
+		F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
+		F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TextContour.swift"; sourceTree = "<group>"; };
+		F9BDF3891E570432007ACF8E /* TextViewDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -664,6 +672,10 @@
 				1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */,
 				1FDEE82C1E45C160008B4CE5 /* Info.plist */,
 				F9694C881E4D707800546E2A /* FontLoader.swift */,
+				F9BDF3831E570254007ACF8E /* UIImage+GPUImage.swift */,
+				F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */,
+				F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */,
+				F9BDF3891E570432007ACF8E /* TextViewDriver.swift */,
 			);
 			path = TextContour;
 			sourceTree = "<group>";
@@ -1446,9 +1458,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BDF3841E570254007ACF8E /* UIImage+GPUImage.swift in Sources */,
+				F9BDF3881E570334007ACF8E /* UIImage+TextContour.swift in Sources */,
 				1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */,
 				F9694C891E4D707800546E2A /* FontLoader.swift in Sources */,
+				F9BDF38A1E570432007ACF8E /* TextViewDriver.swift in Sources */,
 				1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */,
+				F9BDF3861E5702A8007ACF8E /* UIView+Screenshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1514,7 +1530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1558,7 +1574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1573,6 +1589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TextContour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1586,6 +1603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TextContour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1612,6 +1630,7 @@
 				1FDEE8311E45C160008B4CE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
