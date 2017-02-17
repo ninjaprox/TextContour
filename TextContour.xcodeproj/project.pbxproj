@@ -314,7 +314,19 @@
 		F9BDF3861E5702A8007ACF8E /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */; };
 		F9BDF3881E570334007ACF8E /* UIImage+TextContour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */; };
 		F9BDF38A1E570432007ACF8E /* TextViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3891E570432007ACF8E /* TextViewDriver.swift */; };
+		F9BDF3921E571381007ACF8E /* TextContourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3911E571381007ACF8E /* TextContourTests.swift */; };
+		F9BDF39A1E5715CC007ACF8E /* Writter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3991E5715CC007ACF8E /* Writter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9BDF3941E571381007ACF8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FDEE8151E45C15F008B4CE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FDEE81C1E45C15F008B4CE5;
+			remoteInfo = TextContour;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1FDEE81D1E45C160008B4CE5 /* TextContour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextContour.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -628,6 +640,10 @@
 		F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
 		F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TextContour.swift"; sourceTree = "<group>"; };
 		F9BDF3891E570432007ACF8E /* TextViewDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDriver.swift; sourceTree = "<group>"; };
+		F9BDF38F1E571380007ACF8E /* TextContourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextContourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9BDF3911E571381007ACF8E /* TextContourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContourTests.swift; sourceTree = "<group>"; };
+		F9BDF3931E571381007ACF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9BDF3991E5715CC007ACF8E /* Writter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -639,6 +655,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9BDF38C1E571380007ACF8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -646,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				1FDEE81F1E45C160008B4CE5 /* TextContour */,
+				F9BDF3901E571381007ACF8E /* TextContourTests */,
 				1FDEE81E1E45C160008B4CE5 /* Products */,
 				89C1C7A2F5EF5782B308F426 /* Pods */,
 				E8DB03B6EC5BF2ACD9104389 /* Frameworks */,
@@ -656,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				1FDEE81D1E45C160008B4CE5 /* TextContour.app */,
+				F9BDF38F1E571380007ACF8E /* TextContourTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -676,6 +701,7 @@
 				F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */,
 				F9BDF3871E570334007ACF8E /* UIImage+TextContour.swift */,
 				F9BDF3891E570432007ACF8E /* TextViewDriver.swift */,
+				F9BDF3991E5715CC007ACF8E /* Writter.swift */,
 			);
 			path = TextContour;
 			sourceTree = "<group>";
@@ -1039,6 +1065,15 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		F9BDF3901E571381007ACF8E /* TextContourTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9BDF3911E571381007ACF8E /* TextContourTests.swift */,
+				F9BDF3931E571381007ACF8E /* Info.plist */,
+			);
+			path = TextContourTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1062,6 +1097,24 @@
 			productReference = 1FDEE81D1E45C160008B4CE5 /* TextContour.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F9BDF38E1E571380007ACF8E /* TextContourTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9BDF3981E571381007ACF8E /* Build configuration list for PBXNativeTarget "TextContourTests" */;
+			buildPhases = (
+				F9BDF38B1E571380007ACF8E /* Sources */,
+				F9BDF38C1E571380007ACF8E /* Frameworks */,
+				F9BDF38D1E571380007ACF8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9BDF3951E571381007ACF8E /* PBXTargetDependency */,
+			);
+			name = TextContourTests;
+			productName = TextContourTests;
+			productReference = F9BDF38F1E571380007ACF8E /* TextContourTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1075,6 +1128,11 @@
 					1FDEE81C1E45C15F008B4CE5 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+					};
+					F9BDF38E1E571380007ACF8E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1FDEE81C1E45C15F008B4CE5;
 					};
 				};
 			};
@@ -1092,6 +1150,7 @@
 			projectRoot = "";
 			targets = (
 				1FDEE81C1E45C15F008B4CE5 /* TextContour */,
+				F9BDF38E1E571380007ACF8E /* TextContourTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1403,6 +1462,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9BDF38D1E571380007ACF8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1459,6 +1525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9BDF3841E570254007ACF8E /* UIImage+GPUImage.swift in Sources */,
+				F9BDF39A1E5715CC007ACF8E /* Writter.swift in Sources */,
 				F9BDF3881E570334007ACF8E /* UIImage+TextContour.swift in Sources */,
 				1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */,
 				F9694C891E4D707800546E2A /* FontLoader.swift in Sources */,
@@ -1468,7 +1535,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9BDF38B1E571380007ACF8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9BDF3921E571381007ACF8E /* TextContourTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9BDF3951E571381007ACF8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FDEE81C1E45C15F008B4CE5 /* TextContour */;
+			targetProxy = F9BDF3941E571381007ACF8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1FDEE8241E45C160008B4CE5 /* Main.storyboard */ = {
@@ -1611,6 +1694,34 @@
 			};
 			name = Release;
 		};
+		F9BDF3961E571381007ACF8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TextContourTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContourTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextContour.app/TextContour";
+			};
+			name = Debug;
+		};
+		F9BDF3971E571381007ACF8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TextContourTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContourTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextContour.app/TextContour";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1631,6 +1742,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F9BDF3981E571381007ACF8E /* Build configuration list for PBXNativeTarget "TextContourTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9BDF3961E571381007ACF8E /* Debug */,
+				F9BDF3971E571381007ACF8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
