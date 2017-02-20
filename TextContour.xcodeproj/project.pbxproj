@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */; };
 		1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEE8221E45C160008B4CE5 /* ViewController.swift */; };
-		1FDEE8261E45C160008B4CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8241E45C160008B4CE5 /* Main.storyboard */; };
 		1FDEE8281E45C160008B4CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8271E45C160008B4CE5 /* Assets.xcassets */; };
-		1FDEE82B1E45C160008B4CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */; };
 		BB848B1D38F5ED7BA4240D1A /* Pods_TextContour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */; };
+		F937F0A01E5AA31800A87491 /* HeadlessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937F09F1E5AA31800A87491 /* HeadlessViewController.swift */; };
 		F9694BEA1E4D686400546E2A /* font-mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = F9694B4C1E4D686400546E2A /* font-mapping.json */; };
 		F9694BEB1E4D686400546E2A /* ABeeZee-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9694B4E1E4D686400546E2A /* ABeeZee-Italic.ttf */; };
 		F9694BEC1E4D686400546E2A /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9694B4F1E4D686400546E2A /* ABeeZee-Regular.ttf */; };
@@ -335,13 +334,13 @@
 		1FDEE81D1E45C160008B4CE5 /* TextContour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextContour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FDEE8221E45C160008B4CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1FDEE8251E45C160008B4CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FDEE8271E45C160008B4CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1FDEE82A1E45C160008B4CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FDEE82C1E45C160008B4CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.release.xcconfig"; sourceTree = "<group>"; };
+		AB2456F702BD236D31463620 /* Pods-TextContour.headless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.headless.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.headless.xcconfig"; sourceTree = "<group>"; };
 		DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextContour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F937F09F1E5AA31800A87491 /* HeadlessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlessViewController.swift; sourceTree = "<group>"; };
 		F9694B4C1E4D686400546E2A /* font-mapping.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "font-mapping.json"; sourceTree = "<group>"; };
 		F9694B4E1E4D686400546E2A /* ABeeZee-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Italic.ttf"; sourceTree = "<group>"; };
 		F9694B4F1E4D686400546E2A /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
@@ -698,9 +697,7 @@
 				F9694B4B1E4D686400546E2A /* Fonts */,
 				1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */,
 				1FDEE8221E45C160008B4CE5 /* ViewController.swift */,
-				1FDEE8241E45C160008B4CE5 /* Main.storyboard */,
 				1FDEE8271E45C160008B4CE5 /* Assets.xcassets */,
-				1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */,
 				1FDEE82C1E45C160008B4CE5 /* Info.plist */,
 				F9694C881E4D707800546E2A /* FontLoader.swift */,
 				F9BDF3831E570254007ACF8E /* UIImage+GPUImage.swift */,
@@ -711,6 +708,7 @@
 				F9BDF39B1E571A69007ACF8E /* IOSDriver.swift */,
 				F9BDF39D1E571A7F007ACF8E /* Contours.swift */,
 				F9BDF39F1E571D3A007ACF8E /* WebDriver.swift */,
+				F937F09F1E5AA31800A87491 /* HeadlessViewController.swift */,
 			);
 			path = TextContour;
 			sourceTree = "<group>";
@@ -720,6 +718,7 @@
 			children = (
 				DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */,
 				A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */,
+				AB2456F702BD236D31463620 /* Pods-TextContour.headless.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1187,7 +1186,6 @@
 				F9694D9A1E4D87B200546E2A /* TrebuchetMS-BoldItalic.png in Resources */,
 				F9694C6C1E4D686500546E2A /* Nixie-Regular.ttf in Resources */,
 				F9694D1E1E4D87B200546E2A /* ArchivoNarrow-Bold.png in Resources */,
-				1FDEE82B1E45C160008B4CE5 /* LaunchScreen.storyboard in Resources */,
 				F9694C301E4D686400546E2A /* OpenSans-Bold.ttf in Resources */,
 				F9694D391E4D87B200546E2A /* CourierNew-Regular.png in Resources */,
 				F9694D3A1E4D87B200546E2A /* Deconeue-Regular.png in Resources */,
@@ -1349,7 +1347,6 @@
 				F9694D951E4D87B200546E2A /* TimesNewRoman-BoldItalic.png in Resources */,
 				F9694D3C1E4D87B200546E2A /* Diplomata-Regular.png in Resources */,
 				F9694C331E4D686400546E2A /* OpenSans-Regular.ttf in Resources */,
-				1FDEE8261E45C160008B4CE5 /* Main.storyboard in Resources */,
 				F9694D1F1E4D87B200546E2A /* ArchivoNarrow-BoldItalic.png in Resources */,
 				F9694C101E4D686400546E2A /* Gabriela-Regular.ttf in Resources */,
 				F9694D5F1E4D87B200546E2A /* LeagueGothic-Regular.png in Resources */,
@@ -1544,6 +1541,7 @@
 				F9BDF38A1E570432007ACF8E /* TextViewDriver.swift in Sources */,
 				1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */,
 				F9BDF3861E5702A8007ACF8E /* UIView+Screenshot.swift in Sources */,
+				F937F0A01E5AA31800A87491 /* HeadlessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1564,25 +1562,6 @@
 			targetProxy = F9BDF3941E571381007ACF8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1FDEE8241E45C160008B4CE5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FDEE8251E45C160008B4CE5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1FDEE8291E45C160008B4CE5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FDEE82A1E45C160008B4CE5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1FDEE82D1E45C160008B4CE5 /* Debug */ = {
@@ -1706,6 +1685,85 @@
 			};
 			name = Release;
 		};
+		F937F09C1E5AA0C800A87491 /* Headless */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D HEADLESS";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Headless;
+		};
+		F937F09D1E5AA0C800A87491 /* Headless */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB2456F702BD236D31463620 /* Pods-TextContour.headless.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TextContour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContour;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Headless;
+		};
+		F937F09E1E5AA0C800A87491 /* Headless */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TextContourTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.vinhis.TextContourTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextContour.app/TextContour";
+			};
+			name = Headless;
+		};
 		F9BDF3961E571381007ACF8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1741,6 +1799,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FDEE82D1E45C160008B4CE5 /* Debug */,
+				F937F09C1E5AA0C800A87491 /* Headless */,
 				1FDEE82E1E45C160008B4CE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1750,6 +1809,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FDEE8301E45C160008B4CE5 /* Debug */,
+				F937F09D1E5AA0C800A87491 /* Headless */,
 				1FDEE8311E45C160008B4CE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1759,9 +1819,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9BDF3961E571381007ACF8E /* Debug */,
+				F937F09E1E5AA0C800A87491 /* Headless */,
 				F9BDF3971E571381007ACF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

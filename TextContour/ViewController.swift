@@ -35,11 +35,8 @@ class ViewController: UIViewController {
         let range: Range<Int> = index ..< (index + 1)
         let displayed = true
 
-        //        let range: Range<Int>? = nil
-        //        let displayed = false
-
-        //        loadFonts(displayed: displayed, range: range)
-        //        loadImages(displayed: displayed, range: range)
+        loadFonts(displayed: displayed, range: range)
+        loadImages(displayed: displayed, range: range)
     }
 
     // MARK: - Configuration
@@ -100,21 +97,6 @@ class ViewController: UIViewController {
                 self.displayTextContour(self.contourView1, at: contour, in: self.imageView1)
                 debugPrint(contour)
             }
-        }
-    }
-
-    func write(_ data: Data, to filename: String) {
-        guard var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else {
-            return
-        }
-
-        debugPrint(url)
-        url.appendPathComponent(filename)
-        do {
-            try data.write(to: url, options: .atomic)
-            debugPrint("Wrote to", filename)
-        } catch {
-            debugPrint("Failed to write to", filename)
         }
     }
 
