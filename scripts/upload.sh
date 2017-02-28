@@ -17,4 +17,4 @@ curl -v -i -X PUT -T "${file}" \
           -H "Date: ${dateValue}" \
           -H "Content-Type: ${contentType}" \
           -H "Authorization: AWS ${s3Key}:${signature}" \
-          https://${bucket}.s3.amazonaws.com/${FOLDER}/${objectName}
+          "https://${bucket}.s3.amazonaws.com/${FOLDER}/${objectName}"
