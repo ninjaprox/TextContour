@@ -55,7 +55,7 @@ workflows:
 
             set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-workspace" "${BITRISE_PROJECT_PATH}" "-scheme" "${BITRISE_SCHEME}" "test" "-destination" "platform=iOS Simulator,name=iPad Air 2,OS=latest" | xcpretty "--color" "--report" "html" "--output" "${BITRISE_DEPLOY_DIR}/xcode-test-results-${BITRISE_SCHEME}.html"
     - script@1.1.3:
-        title: Change dir to Documents folder
+        title: Create offsets.js
         inputs:
         - content: |-
             #!/bin/bash
@@ -67,6 +67,11 @@ workflows:
             devicePath=$(ls -td ~/Library/Developer/CoreSimulator/Devices/* | head -n 1)
             appPath=$(ls -td $devicePath/data/Containers/Data/Application/* | head -n 1)
             documentsPath=$appPath/Documents
+
+            cd $BITRISE_SOURCE_DIR
+            cp $documentsPath/contours-ios.json scripts/
+            cp $documentsPath/contours-web.json scripts/
+            node scripts/offsets.js
 
             cd $documentsPath
             ls
