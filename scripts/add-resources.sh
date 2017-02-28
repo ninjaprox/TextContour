@@ -6,6 +6,8 @@ IMAGES_PATH="TextContour/Images"
 PLIST_PATH="TextContour/Info.plist"
 PLISTBUDDY="/usr/libexec/PlistBuddy"
 
+git checkout TextContour.xcodeproj/project.pbxproj TextContour/Info.plist
+
 # Copy phase
 echo "Coping Fonts..."
 cp -r "${RESOURCE_REPO_PATH}/fonts/" "$FONTS_PATH"
@@ -24,8 +26,9 @@ ${PLISTBUDDY} -c "Print UIAppFonts" "${PLIST_PATH}" > /dev/null 2>&1
 [[ "$?" = 0 ]] && ${PLISTBUDDY} -c "Delete UIAppFonts" "${PLIST_PATH}"
 ${PLISTBUDDY} -c "Add UIAppFonts array" "${PLIST_PATH}"
 index=0
-for filename in $(ls $FONTS_PATH) ; do
-    ${PLISTBUDDY} -c "Add UIAppFonts:${index} string ${filename}" "${PLIST_PATH}"
+ls ${FONTS_PATH} | while read filename ; do
+    command="${PLISTBUDDY} -c \"Add UIAppFonts:${index} string Fonts/${filename}\" \"${PLIST_PATH}\""
+    eval $command
     index=$(( index + 1))
 done
 echo "Add fonts to Info.plist... Done."
