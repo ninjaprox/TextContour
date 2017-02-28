@@ -16,4 +16,4 @@ for (let font in web) {
     offsets[font] = offset;
 }
 
-fs.writeFile('offsets.json', JSON.stringify(offsets));
+fs.writeFile('./offsets.json', JSON.stringify(offsets));

@@ -71,11 +71,11 @@ workflows:
             cd $BITRISE_SOURCE_DIR
             cp $documentsPath/contours-ios.json scripts/
             cp $documentsPath/contours-web.json scripts/
-            node scripts/offsets.js
+            cd scripts
+            node offsets.js
 
             # Upload offsets.js
 
-            cd scripts
             ./upload.sh offsets.json application/json
 
             # Upload images
