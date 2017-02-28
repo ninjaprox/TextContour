@@ -11,15 +11,10 @@ import Foundation
 final class FontLoader {
 
     func list() -> [String] {
-        guard let path = Bundle.main.path(forResource: "fonts", ofType: "json"),
-            let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-                return []
-        }
+        let paths = Bundle.main.paths(forResourcesOfType: "ttf", inDirectory: "Fonts")
 
-        guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
-            return []
+        return paths.map {
+            return ($0 as NSString).lastPathComponent.replacingOccurrences(of: ".ttf", with: "")
         }
-
-        return json as! [String]
     }
 }

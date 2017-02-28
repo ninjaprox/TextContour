@@ -22,10 +22,10 @@ class WebDriver {
         var contours: Contours = [:]
 
         for name in fontNames {
-            guard let url = Bundle.main.url(forResource: name, withExtension: "png"),
+            guard let url = Bundle.main.url(forResource: name, withExtension: "png", subdirectory: "Images"),
                 let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data)?.blackAndWhite() else {
-                    debugPrint("Failed to load", name)
+                    debugPrint("Failed to load image", name)
 
                     continue
             }

@@ -20,8 +20,16 @@ class TextViewDriver {
 
     // MARK: - Init
 
-    init?(fontName: String, fontSize: CGFloat, content: String) {
-        guard let font = UIFont(name: fontName, size: fontSize) else { return nil }
+    init?(fontName _fontName: String, fontSize: CGFloat, content: String) {
+        let fontName = _fontName
+            .replacingOccurrences(of: " ", with: "")
+            .replacingOccurrences(of: "700", with: "bold")
+
+        guard let font = UIFont(name: fontName, size: fontSize) else {
+            debugPrint("Failed to load font", _fontName)
+
+            return nil
+        }
 
         self.font = font
         self.fontSize = fontSize
