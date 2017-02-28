@@ -21,7 +21,7 @@ echo "Coping Images... Done."
 ruby "scripts/add-resources.rb"
 
 # Add to Info.plist phase
-echo "Add fonts to Info.plist..."
+echo "Adding fonts to Info.plist..."
 ${PLISTBUDDY} -c "Print UIAppFonts" "${PLIST_PATH}" > /dev/null 2>&1
 [[ "$?" = 0 ]] && ${PLISTBUDDY} -c "Delete UIAppFonts" "${PLIST_PATH}"
 ${PLISTBUDDY} -c "Add UIAppFonts array" "${PLIST_PATH}"
@@ -31,4 +31,4 @@ ls ${FONTS_PATH} | while read filename ; do
     eval $command
     index=$(( index + 1))
 done
-echo "Add fonts to Info.plist... Done."
+echo "Adding fonts to Info.plist... Done."
