@@ -83,7 +83,7 @@ workflows:
             cp upload.sh $documentsPath/Images
             cd $documentsPath/Images
             ls | while read filename ; do
-                ./upload.sh $filename image/png
+                ./upload.sh "$filename" image/png
             done
     before_run: 
     after_run: 
