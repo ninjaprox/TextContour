@@ -6,7 +6,8 @@ projectPath = 'TextContour.xcodeproj'
 project = Xcodeproj::Project.open(projectPath)
 target = project.targets.first
 
-fontGroup = project.new_group('Fonts', 'TextContour/Fonts')
+textContourGroup = project.groups.first
+fontGroup = textContourGroup.new_group('Fonts', 'Fonts')
 refToAdd = fontGroup.new_reference('Google/Lato-BoldItalic.ttf')
 
 target.add_resources([refToAdd])
