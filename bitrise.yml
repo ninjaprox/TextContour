@@ -76,14 +76,13 @@ workflows:
 
             # Upload offsets.js
 
-            ./upload.sh offsets.json application/json
+            ./upload.sh offsets.json offsets.json application/json
 
             # Upload images
 
-            cp upload.sh $documentsPath/Images
-            cd $documentsPath/Images
-            ls | while read filename ; do
-                ./upload.sh "$filename" image/png
+            imagesPath="${documentsPath}/Images"
+            ls "$imagesPath" | while read filename ; do
+                ./upload.sh "$filename" "${imagesPath}/{$filename}" "image/png"
             done
     before_run: 
     after_run: 

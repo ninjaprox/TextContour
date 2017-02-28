@@ -3,10 +3,10 @@
 FOLDER=ios-images
 
 objectName=$1
-file=$1
+file=$2
 bucket=$S3_BUCKET
 resource="/${bucket}/${FOLDER}/${objectName}"
-contentType=$2
+contentType=$3
 dateValue=$(date +"%a, %d %b %Y %T %z")
 stringToSign="PUT\n\n${contentType}\n${dateValue}\n${resource}"
 s3Key=$S3_ACCESS_ID
