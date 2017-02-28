@@ -41,6 +41,12 @@ class IOSDriver {
                               "width": contour.size.width,
                               "height": contour.size.height]
             display?(image, contour)
+
+            guard let imageData = UIImagePNGRepresentation(image) else {
+                continue
+            }
+
+            Writter().writeImage(imageData, to: "\(name).png")
         }
 
         return contours
