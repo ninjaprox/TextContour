@@ -55,17 +55,17 @@ workflows:
 
             set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-workspace" "${BITRISE_PROJECT_PATH}" "-scheme" "${BITRISE_SCHEME}" "test" "-destination" "platform=iOS Simulator,name=iPad Air 2,OS=latest" | xcpretty "--color" "--report" "html" "--output" "${BITRISE_DEPLOY_DIR}/xcode-test-results-${BITRISE_SCHEME}.html"
     - script@1.1.3:
-        title: Create offsets.js
+        title: Create offsets.js and upload to S3
         inputs:
         - content: |-
             #!/bin/bash
             # fail if any commands fails
             set -e
-            # debug log
-            set -x
+            set +x
 
             devicePath=$(ls -td ~/Library/Developer/CoreSimulator/Devices/* | head -n 1)
             appPath=$(ls -td $devicePath/data/Containers/Data/Application/* | head -n 1)
+            set -x # debug log
             documentsPath=$appPath/Documents
 
             cd $BITRISE_SOURCE_DIR
@@ -73,9 +73,18 @@ workflows:
             cp $documentsPath/contours-web.json scripts/
             node scripts/offsets.js
 
-            cd $documentsPath
-            ls
-            ls Images
+            # Upload offsets.js
+
+            cd scripts
+            ./upload.sh offsets.json application/json
+
+            # Upload images
+
+            cp upload.sh $documentsPath/Images
+            cd $documentsPath/Images
+            ls | while read filename ; do
+                ./upload.sh $filename image/png
+            done
     before_run: 
     after_run: 
 app:
