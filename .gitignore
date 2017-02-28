@@ -64,3 +64,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# Ignore resources as they will be copied and added on run
+Images
+Fonts
