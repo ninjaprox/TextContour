@@ -14,7 +14,6 @@ workflows:
     - git-clone@3.4.1:
         inputs:
         - clone_depth: '1'
-    - cocoapods-install@1.6.1: {}
     - script@1.1.3:
         title: Clone font-image-service
         inputs:
@@ -53,7 +52,7 @@ workflows:
             # debug log
             set -x
 
-            set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-workspace" "${BITRISE_PROJECT_PATH}" "-scheme" "${BITRISE_SCHEME}" "test" "-destination" "platform=iOS Simulator,name=iPad Air 2,OS=latest" | xcpretty "--color" "--report" "html" "--output" "${BITRISE_DEPLOY_DIR}/xcode-test-results-${BITRISE_SCHEME}.html"
+            set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-project" "${BITRISE_PROJECT_PATH}" "-scheme" "${BITRISE_SCHEME}" "test" "-destination" "platform=iOS Simulator,name=iPad Air 2,OS=latest" | xcpretty "--color" "--report" "html" "--output" "${BITRISE_DEPLOY_DIR}/xcode-test-results-${BITRISE_SCHEME}.html"
     - script@1.1.3:
         title: Create offsets.js and upload to S3
         inputs:
@@ -90,7 +89,7 @@ app:
   envs:
   - opts:
       is_expand: false
-    BITRISE_PROJECT_PATH: TextContour.xcworkspace
+    BITRISE_PROJECT_PATH: TextContour.xcodeproj
   - opts:
       is_expand: false
     BITRISE_SCHEME: TextContourTests

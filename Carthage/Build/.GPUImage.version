@@ -1,0 +1,22 @@
+{
+  "commitish" : "0.1.7",
+  "iOS" : [
+    {
+      "name" : "GPUImage",
+      "md5" : "a30402057289301f2d0846d779905bc2"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+    {
+      "name" : "GPUImage",
+      "md5" : "224358d4f6b8d555b2dbf74e4637a0c3"
+    }
+  ]
+}

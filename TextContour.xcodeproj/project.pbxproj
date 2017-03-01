@@ -10,9 +10,10 @@
 		1FDEE8211E45C160008B4CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEE8201E45C160008B4CE5 /* AppDelegate.swift */; };
 		1FDEE8231E45C160008B4CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEE8221E45C160008B4CE5 /* ViewController.swift */; };
 		1FDEE8281E45C160008B4CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDEE8271E45C160008B4CE5 /* Assets.xcassets */; };
-		BB848B1D38F5ED7BA4240D1A /* Pods_TextContour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */; };
 		F937F0A01E5AA31800A87491 /* HeadlessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937F09F1E5AA31800A87491 /* HeadlessViewController.swift */; };
 		F9694C891E4D707800546E2A /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9694C881E4D707800546E2A /* FontLoader.swift */; };
+		F99392871E66DA5500B7E5FE /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99392861E66DA5500B7E5FE /* GPUImage.framework */; };
+		F993928A1E66DF7400B7E5FE /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99392861E66DA5500B7E5FE /* GPUImage.framework */; };
 		F9A2223F1E6572AF0021AF1F /* String+PostScriptName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A2223E1E6572AF0021AF1F /* String+PostScriptName.swift */; };
 		F9BDF3841E570254007ACF8E /* UIImage+GPUImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3831E570254007ACF8E /* UIImage+GPUImage.swift */; };
 		F9BDF3861E5702A8007ACF8E /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */; };
@@ -41,12 +42,9 @@
 		1FDEE8221E45C160008B4CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FDEE8271E45C160008B4CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FDEE82C1E45C160008B4CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.release.xcconfig"; sourceTree = "<group>"; };
-		AB2456F702BD236D31463620 /* Pods-TextContour.headless.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.headless.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.headless.xcconfig"; sourceTree = "<group>"; };
-		DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextContour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextContour/Pods-TextContour.debug.xcconfig"; sourceTree = "<group>"; };
-		DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextContour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F937F09F1E5AA31800A87491 /* HeadlessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadlessViewController.swift; sourceTree = "<group>"; };
 		F9694C881E4D707800546E2A /* FontLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
+		F99392861E66DA5500B7E5FE /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = Carthage/Build/iOS/GPUImage.framework; sourceTree = "<group>"; };
 		F9A2223E1E6572AF0021AF1F /* String+PostScriptName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PostScriptName.swift"; sourceTree = "<group>"; };
 		F9BDF3831E570254007ACF8E /* UIImage+GPUImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+GPUImage.swift"; sourceTree = "<group>"; };
 		F9BDF3851E5702A8007ACF8E /* UIView+Screenshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
@@ -66,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB848B1D38F5ED7BA4240D1A /* Pods_TextContour.framework in Frameworks */,
+				F99392871E66DA5500B7E5FE /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F993928A1E66DF7400B7E5FE /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +85,7 @@
 				1FDEE81F1E45C160008B4CE5 /* TextContour */,
 				F9BDF3901E571381007ACF8E /* TextContourTests */,
 				1FDEE81E1E45C160008B4CE5 /* Products */,
-				89C1C7A2F5EF5782B308F426 /* Pods */,
-				E8DB03B6EC5BF2ACD9104389 /* Frameworks */,
+				F99392851E66DA5500B7E5FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,20 +120,10 @@
 			path = TextContour;
 			sourceTree = "<group>";
 		};
-		89C1C7A2F5EF5782B308F426 /* Pods */ = {
+		F99392851E66DA5500B7E5FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */,
-				A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */,
-				AB2456F702BD236D31463620 /* Pods-TextContour.headless.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E8DB03B6EC5BF2ACD9104389 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DDF6D26A58C2133AC39C1F08 /* Pods_TextContour.framework */,
+				F99392861E66DA5500B7E5FE /* GPUImage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,12 +144,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FDEE82F1E45C160008B4CE5 /* Build configuration list for PBXNativeTarget "TextContour" */;
 			buildPhases = (
-				46D852AE196A2055DE5D7541 /* [CP] Check Pods Manifest.lock */,
 				1FDEE8191E45C15F008B4CE5 /* Sources */,
 				1FDEE81A1E45C15F008B4CE5 /* Frameworks */,
 				1FDEE81B1E45C15F008B4CE5 /* Resources */,
-				E861B50A919370F2DCC9E643 /* [CP] Embed Pods Frameworks */,
-				1A00905BBE5C29DE7CD48FFB /* [CP] Copy Pods Resources */,
+				F99392891E66DEA400B7E5FE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -249,50 +235,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1A00905BBE5C29DE7CD48FFB /* [CP] Copy Pods Resources */ = {
+		F99392891E66DEA400B7E5FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/GPUImage.framework",
 			);
-			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextContour/Pods-TextContour-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46D852AE196A2055DE5D7541 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E861B50A919370F2DCC9E643 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextContour/Pods-TextContour-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -431,9 +386,12 @@
 		};
 		1FDEE8301E45C160008B4CE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA8FCB354433F98B72146C98 /* Pods-TextContour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextContour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -445,9 +403,12 @@
 		};
 		1FDEE8311E45C160008B4CE5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A542E200B5CB8CF97A879EA2 /* Pods-TextContour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextContour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -510,9 +471,12 @@
 		};
 		F937F09D1E5AA0C800A87491 /* Headless */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB2456F702BD236D31463620 /* Pods-TextContour.headless.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextContour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -526,6 +490,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextContourTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -540,6 +508,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextContourTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -554,6 +526,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextContourTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
