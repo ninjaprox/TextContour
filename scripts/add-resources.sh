@@ -6,7 +6,10 @@ IMAGES_PATH="TextContour/Images"
 PLIST_PATH="TextContour/Info.plist"
 PLISTBUDDY="/usr/libexec/PlistBuddy"
 
+# Clean up
 git checkout TextContour.xcodeproj/project.pbxproj TextContour/Info.plist
+rm "$FONTS_PATH"/*
+rm "$IMAGES_PATH"/*
 
 # Copy phase
 echo "Coping Fonts..."
