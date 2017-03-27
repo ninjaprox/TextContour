@@ -12,8 +12,7 @@ class ViewController: UIViewController {
     let size = CGSize(width: 800, height: 200)
     let position = CGPoint(x: 0, y: 10)
     let fontSize: CGFloat = 40
-    var containerView: UIView!
-    var textView: UITextView!
+    var textContainerView: UIView!
     var imageView1: UIImageView!
     var contourView1: UIView!
     var imageView2: UIImageView!
@@ -22,35 +21,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        containerView = UIView(frame: CGRect(x: 0, y: 20, width: size.width, height: size.height))
-        textView = UITextView(frame: CGRect(x: position.x, y: position.y, width: size.width - position.x, height: size.height - position.y))
         imageView1 = UIImageView(frame: CGRect(x: 0, y: 250,
                                                width: size.width, height: size.height))
         imageView2 = UIImageView(frame: CGRect(x: 0, y: 500,
                                                width: size.width, height: size.height))
 
-        configuration()
+        configure()
 
         let index = 20
         let range: Range<Int> = index ..< (index + 1)
         let displayed = true
 
+        loadTextView(index: index)
         loadFonts(displayed: displayed, range: range)
         loadImages(displayed: displayed, range: range)
     }
 
     // MARK: - Configuration
 
-    func configuration() {
-        containerView.backgroundColor = .white
-
-        textView.backgroundColor = .white
-        textView.textContainerInset = .zero;
-        textView.textContainer.lineFragmentPadding = 0;
-        //        textView.layoutManager.delegate = self
-        containerView.addSubview(textView)
-        view.addSubview(containerView)
-
+    func configure() {
         imageView1.layer.borderColor = UIColor.red.cgColor
         imageView1.layer.borderWidth = 1
 
@@ -68,6 +57,21 @@ class ViewController: UIViewController {
 
     // MARK: -
 
+    func loadTextView(index: Int) {
+        let fontNames = FontLoader().list()
+        let fontName = fontNames[index]
+        let content = "Grumpy wizards make toxic brew for the evil Queen and Jack. AV. \(fontName)"
+
+        if textContainerView != nil {
+            textContainerView.removeFromSuperview()
+        }
+        textContainerView = TextViewDriver(fontName: fontName, fontSize: fontSize, content: content)?.driverView()
+        textContainerView.frame.origin.y = 20
+        textContainerView.layer.borderWidth = 1
+        textContainerView.layer.borderColor = UIColor.blue.cgColor
+        view.addSubview(textContainerView)
+    }
+
     func loadFonts(displayed: Bool, range: Range<Int>? = nil) {
         var fontNames = FontLoader().list()
 
@@ -79,7 +83,7 @@ class ViewController: UIViewController {
             if displayed {
                 self.display(image, in: self.imageView2)
                 self.displayTextContour(self.contourView2, at: contour, in: self.imageView2)
-                debugPrint(contour)
+                debugPrint("iOS", contour)
             }
         }
     }
@@ -95,7 +99,7 @@ class ViewController: UIViewController {
             if displayed {
                 self.display(image, in: self.imageView1)
                 self.displayTextContour(self.contourView1, at: contour, in: self.imageView1)
-                debugPrint(contour)
+                debugPrint("Web", contour)
             }
         }
     }
