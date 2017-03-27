@@ -37,7 +37,7 @@ class IOSDriver {
             let contour = image.textContourSync()
 
             contours[name] = ["x": contour.origin.x,
-                              "y": contour.origin.y,
+                              "y": contour.origin.y - 30,
                               "width": contour.size.width,
                               "height": contour.size.height]
             display?(image, contour)

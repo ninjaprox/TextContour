@@ -47,6 +47,7 @@ class TextViewDriver {
         textView.backgroundColor = .white
         textView.textColor = .black
         textView.textContainerInset = .zero;
+        textView.textContainerInset.top = 30
         textView.textContainer.lineFragmentPadding = 0;
         view.addSubview(textView)
     }
