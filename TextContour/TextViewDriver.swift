@@ -49,6 +49,8 @@ class TextViewDriver {
         textView.textContainerInset = .zero;
         textView.textContainerInset.top = 30
         textView.textContainer.lineFragmentPadding = 0;
+        textView.layoutManager.usesFontLeading = false
+
         view.addSubview(textView)
     }
 
