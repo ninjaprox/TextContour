@@ -25,10 +25,12 @@ class ViewController: UIViewController {
                                                width: size.width, height: size.height))
         imageView2 = UIImageView(frame: CGRect(x: 0, y: 500,
                                                width: size.width, height: size.height))
+        contourView1 = UIView()
+        contourView2 = UIView()
 
         configure()
 
-        let index = 20
+        let index = 0
         let range: Range<Int> = index ..< (index + 1)
         let displayed = true
 
@@ -43,14 +45,12 @@ class ViewController: UIViewController {
         imageView1.layer.borderColor = UIColor.red.cgColor
         imageView1.layer.borderWidth = 1
 
-        contourView1 = UIView()
         contourView1.layer.borderColor = UIColor.red.cgColor
         contourView1.layer.borderWidth = 1
 
         imageView2.layer.borderColor = UIColor.red.cgColor
         imageView2.layer.borderWidth = 1
 
-        contourView2 = UIView()
         contourView2.layer.borderColor = UIColor.red.cgColor
         contourView2.layer.borderWidth = 1
     }
@@ -116,25 +116,5 @@ class ViewController: UIViewController {
         view.removeFromSuperview()
         view.frame = rect
         imageView.addSubview(view)
-    }
-}
-
-extension ViewController: NSLayoutManagerDelegate {
-
-    func layoutManager(_ layoutManager: NSLayoutManager, shouldGenerateGlyphs glyphs: UnsafePointer<CGGlyph>, properties props: UnsafePointer<NSGlyphProperty>, characterIndexes charIndexes: UnsafePointer<Int>, font aFont: UIFont, forGlyphRange glyphRange: NSRange) -> Int {
-        print("glyphs", glyphs)
-        print("props", props)
-        print("charIndexes", charIndexes)
-
-        return 0
-    }
-
-    func layoutManager(_ layoutManager: NSLayoutManager, boundingBoxForControlGlyphAt glyphIndex: Int, for textContainer: NSTextContainer, proposedLineFragment proposedRect: CGRect, glyphPosition: CGPoint, characterIndex charIndex: Int) -> CGRect {
-        print("glyphIndex", glyphIndex)
-        print("proposedRect", proposedRect)
-        print("glyphPosition", glyphPosition)
-        print("charIndex", charIndex)
-        
-        return proposedRect
     }
 }
