@@ -20,7 +20,7 @@ extension String {
         }
 
         let font = CGFont(provider)
-        let postScriptName = font.postScriptName as! String
+        let postScriptName = font.postScriptName! as String
 
         return postScriptName
     }
