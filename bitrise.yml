@@ -42,17 +42,11 @@ workflows:
 
             cd $BITRISE_SOURCE_DIR
             scripts/add-resources.sh
-    - script:
+    - xcode-test:
         title: Run headlessly
         inputs:
-        - content: |-
-            #!/bin/bash
-            # fail if any commands fails
-            set -e
-            # debug log
-            set -x
-
-            set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-project" "${BITRISE_PROJECT_PATH}" "-scheme" "${BITRISE_SCHEME}" "test" "-destination" "platform=iOS Simulator,name=iPad Air 2,OS=latest" | xcpretty "--color" "--report" "html" "--output" "${BITRISE_DEPLOY_DIR}/xcode-test-results-${BITRISE_SCHEME}.html"
+        - simulator_device: iPad Air
+        - xcodebuild_test_options: ONLY_ACTIVE_ARCH=YES
     - script:
         title: Create offsets.js and upload to S3
         inputs:
