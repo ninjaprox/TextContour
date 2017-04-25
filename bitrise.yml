@@ -29,7 +29,7 @@ workflows:
             cd font-image-service
             git init
             git remote add -t master origin "$FONT_IMAGE_SERVICE_REPO"
-            git fetch --depth=1 master
+            git fetch --depth=1
             git checkout master
     - script:
         title: Add resources
