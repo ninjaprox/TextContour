@@ -20,6 +20,18 @@ echo "Coping Images..."
 cp -r "${RESOURCE_REPO_PATH}/images/" "$IMAGES_PATH"
 echo "Coping Images... Done."
 
+# Copy phase - local
+if [[ -d "${RESOURCE_REPO_PATH}/local-fonts" ]] ; then
+    echo "Coping Fonts (local)..."
+    cp -r "${RESOURCE_REPO_PATH}/local-fonts/" "$FONTS_PATH"
+    echo "Coping Fonts (local)... Done."
+fi
+if [[ -d "${RESOURCE_REPO_PATH}/local-images" ]] ; then
+    echo "Coping Images (local)..."
+    cp -r "${RESOURCE_REPO_PATH}/local-images/" "$IMAGES_PATH"
+    echo "Coping Images (local)... Done."
+fi
+
 # Add resources phase
 ruby "scripts/add-resources.rb"
 
