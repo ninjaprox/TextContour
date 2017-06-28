@@ -47,7 +47,7 @@ class TextViewDriver {
         textView.backgroundColor = .white
         textView.textColor = .black
         textView.textContainerInset = .zero;
-        textView.textContainerInset.top = 30
+        textView.textContainerInset.top = font.ascender - font.xHeight
         textView.textContainer.lineFragmentPadding = 0;
         textView.layoutManager.usesFontLeading = false
 
@@ -80,5 +80,9 @@ class TextViewDriver {
 
     func textContour() -> CGRect {
         return view.imageSync().textContourSync()
+    }
+    
+    func topInset() -> CGFloat {
+        return textView.textContainerInset.top
     }
 }

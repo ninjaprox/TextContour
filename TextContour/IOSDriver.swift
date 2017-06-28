@@ -35,11 +35,13 @@ class IOSDriver {
 
             let image = driver.image()
             let contour = image.textContourSync()
+            let topInset = driver.topInset()
 
             contours[name] = ["x": contour.origin.x,
-                              "y": contour.origin.y - 30,
+                              "y": contour.origin.y,
                               "width": contour.size.width,
-                              "height": contour.size.height]
+                              "height": contour.size.height,
+                              "topInset": topInset]
             display?(image, contour)
 
             guard let imageData = UIImagePNGRepresentation(image) else {
@@ -54,7 +56,7 @@ class IOSDriver {
 
     func data() -> Data? {
         let contours = self.contours()
-
+        
         return try? JSONSerialization.data(withJSONObject: contours, options: .prettyPrinted)
     }
 }
