@@ -1,19 +1,20 @@
-'use strict';
+"use strict";
 
-const exec = require('child_process').execSync;
-const ios = require('./contours-ios.json');
-const web = require('./contours-web.json');
-const fs = require('fs');
+const exec = require("child_process").execSync;
+const ios = require("./contours-ios.json");
+const web = require("./contours-web.json");
+const fs = require("fs");
 
 var offsets = {};
 
 for (let font in web) {
     const offset = {
         x: web[font].x - ios[font].x,
-        y: web[font].y - ios[font].y
+        y: web[font].y - ios[font].y,
+        top: ios[font].topInset
     };
 
     offsets[font] = offset;
 }
 
-fs.writeFile('./offsets.json', JSON.stringify(offsets));
+fs.writeFile("./offsets.json", JSON.stringify(offsets));
